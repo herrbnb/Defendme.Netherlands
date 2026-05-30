@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DefendMe Netherlands — Global Legal Defense & Consultancy</title>
+    <meta name="description" content="DefendMe Netherlands provides world-class legal defense, consultancy, and case filing services across the Netherlands and globally. Expert attorneys, transparent pricing, and proven results.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --navy: #0a1628;
+            --navy-light: #111d35;
+            --navy-mid: #162544;
+            --gold: #c9a84c;
+            --gold-light: #d4b860;
+            --gold-pale: #fdf6e8;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --red-accent: #c0392b;
+            --green-accent: #1a7f4b;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.08);
+            --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --radius-sm: 6px;
+            --radius: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 20px;
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        /* ──────────── HEADER & NAVIGATION ──────────── */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--navy);
+            border-bottom: 2px solid rgba(201, 168, 76, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        
+        .header.scrolled {
+            box-shadow: var(--shadow-xl);
+            border-bottom-color: var(--gold);
+        }
+        
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 78px;
+        }
+        
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        
+        .logo-svg {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+        
+        .logo-shield {
+            fill: var(--gold);
+            transition: var(--transition);
+        }
+        
+        .logo-link:hover .logo-shield {
+            fill: var(--gold-light);
+            filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.5));
+        }
+        
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        
+        .logo-main {
+            font-family: 'Merriweather', serif;
+            font-weight: 900;
+            font-size: 1.35rem;
+            color: var(--white);
+            letter-spacing: -0.01em;
+        }
+        
+        .logo-main span {
+            color: var(--gold);
+        }
+        
+        .logo-sub {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--gray-400);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: var(--gray-300);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 10px 16px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            white-space: nowrap;
+            position: relative;
+        }
+        
+        .nav a:hover,
+        .nav a.active {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 16px;
+            right: 16px;
+            height: 2px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        
+        .nav a:hover::after,
+        .nav a.active::after {
+            transform: scaleX(1);
+        }
+        
+        .nav-cta {
+            background: var(--gold) !important;
+            color: var(--navy) !important;
+            font-weight: 700 !important;
+            padding: 10px 22px !important;
+            border-radius: 50px !important;
+            margin-left: 8px;
+            transition: var(--transition) !important;
+        }
+        
+        .nav-cta:hover {
+            background: var(--gold-light) !important;
+            box-shadow: 0 0 24px rgba(201, 168, 76, 0.4);
+            transform: translateY(-1px);
+        }
+        
+        .nav-cta::after {
+            display: none !important;
+        }
+        
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--white);
+            font-size: 1.6rem;
+            transition: var(--transition);
+        }
+        
+        .hamburger:hover {
+            color: var(--gold);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 78px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--navy);
+            z-index: 999;
+            flex-direction: column;
+            padding: 24px;
+            gap: 4px;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 14px 20px;
+            color: var(--gray-300);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        
+        .mobile-menu a:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+        }
+        
+        .mobile-menu .nav-cta {
+            text-align: center;
+            margin-top: 12px;
+            color: var(--navy) !important;
+            font-weight: 700 !important;
+        }
+        
+        /* ──────────── HERO SECTION ──────────── */
+        .hero {
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 30%, rgba(201, 168, 76, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        
+        .hero-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 60px 28px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content h1 span {
+            color: var(--gold);
+            position: relative;
+        }
+        
+        .hero-content h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold);
+            opacity: 0.3;
+            border-radius: 2px;
+        }
+        
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--gray-400);
+            margin-bottom: 30px;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            white-space: nowrap;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+        }
+        
+        .btn-primary:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            box-shadow: 0 8px 30px rgba(201, 168, 76, 0.35);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-card {
+            background: var(--navy-light);
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            border-radius: var(--radius-2xl);
+            padding: 36px 32px;
+            box-shadow: var(--shadow-xl);
+            max-width: 420px;
+            width: 100%;
+        }
+        
+        .hero-card .stat-row {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .hero-card .stat {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-card .stat-num {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--gold);
+            font-family: 'Merriweather', serif;
+        }
+        
+        .hero-card .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .hero-card .trust-stars {
+            text-align: center;
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .hero-card .trust-text {
+            text-align: center;
+            color: var(--gray-300);
+            font-size: 0.85rem;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            color: var(--gold-light);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .hero-badge i {
+            font-size: 0.7rem;
+            animation: pulse-dot 2s infinite;
+        }
+        
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+            
+            50% {
+                opacity: 0.3;
+            }
+        }
+        
+        
+        /*______Login Page___*/
+        <section class="login-section" id="login"><div class="login-container"><h2 class="login-title">Client Login</h2><form class="login-form"><div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username" required></div><div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" required></div><div class="forgot-password"><a href="#forgot">Forgot your password?</a></div><button type="submit" class="login-button">Login</button><div class="signup-link">Don't have an account? <a href="#signup">Sign up here</a>
+ </div></form></div></section>
+
+        /* ──────────── SECTION COMMONS ──────────── */
+        .section {
+            padding: 80px 28px;
+        }
+        
+        .section-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .section-label {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            background: var(--gold-pale);
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .bg-light {
+            background: var(--gray-50);
+        }
+        
+        .bg-navy {
+            background: var(--navy);
+            color: var(--white);
+        }
+        
+        .bg-navy .section-title {
+            color: var(--white);
+        }
+        
+        .bg-navy .section-subtitle {
+            color: var(--gray-400);
+        }
+        
+        .bg-navy .section-label {
+            background: rgba(201, 168, 76, 0.15);
+            color: var(--gold-light);
+        }
+        
+        /* ──────────── ABOUT US ──────────── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--navy-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+            color: var(--gold);
+            font-size: 5rem;
+            opacity: 0.7;
+        }
+        
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .about-highlight {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 14px;
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+        
+        .about-highlight:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .about-highlight i {
+            color: var(--gold);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .about-highlight strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+        
+        .about-highlight span {
+            font-size: 0.82rem;
+            color: var(--gray-500);
+        }
+        
+        /* ──────────── TEAM / ATTORNEYS ──────────── */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        
+        .team-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition-slow);
+            text-align: center;
+            padding-bottom: 24px;
+        }
+        
+        .team-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--gold);
+        }
+        
+        .team-avatar {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--gray-400);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-avatar-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%);
+            color: var(--gold);
+            font-size: 5rem;
+        }
+        
+        .team-card h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-top: 18px;
+        }
+        
+        .team-card .role {
+            font-size: 0.82rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin: 4px 0;
+        }
+        
+        .team-card .location {
+            font-size: 0.78rem;
+            color: var(--gray-500);
+            margin-bottom: 10px;
+        }
+        
+        .team-card .team-socials {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .team-card .team-socials a {
+            color: var(--gray-400);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .team-card .team-socials a:hover {
+            color: var(--gold);
+        }
+        
+        /* ──────────── CONSULTATIONS & PRICING ──────────── */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            border: 2px solid var(--gray-200);
+            padding: 32px 24px;
+            transition: var(--transition-slow);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(180deg, #fffdf7 0%, #ffffff 30%);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            right: 24px;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 6px 16px;
+            border-radius: 50px;
+            letter-spacing: 0.04em;
+        }
+        
+        .pricing-card h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: var(--navy);
+            font-family: 'Merriweather', serif;
+            margin: 16px 0 4px;
+        }
+        
+        .pricing-card .price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--gray-500);
+        }
+        
+        .pricing-card .price-sub {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-features li {
+            padding: 7px 0;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .pricing-features li i {
+            color: var(--green-accent);
+            font-size: 0.85rem;
+        }
+        
+        .pricing-features li.not-included {
+            color: var(--gray-400);
+            text-decoration: line-through;
+        }
+        
+        .pricing-features li.not-included i {
+            color: var(--gray-400);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+        
+        /* ──────────── LEGAL CASES ──────────── */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+        
+        .case-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--gray-200);
+            padding: 24px;
+            transition: var(--transition-slow);
+        }
+        
+        .case-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--gold);
+        }
+        
+        .case-card .case-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        
+        .case-card h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.05rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        
+        .case-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        
+        .case-card .case-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.78rem;
+            color: var(--gray-400);
+        }
+        
+        .case-card .case-outcome {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: #e8f5e9;
+            color: #1a7f4b;
+            margin-top: 8px;
+        }
+        
+        /* ──────────── FAQ ──────────── */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: var(--white);
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--gold);
+        }
+        
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 18px 22px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            color: var(--gold);
+        }
+        
+        .faq-question i {
+            font-size: 0.85rem;
+            transition: var(--transition);
+            color: var(--gray-400);
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--gold);
+        }
+        
+        .faq-item.active {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer-inner {
+            padding: 0 22px 18px;
+            color: var(--gray-600);
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+        
+        /* ──────────── BLOG / NEWSLETTER ──────────── */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition-slow);
+        }
+        
+        .blog-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+        
+        .blog-thumb {
+            height: 180px;
+            background: var(--navy-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+        
+        .blog-body {
+            padding: 20px;
+        }
+        
+        .blog-body .blog-date {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-bottom: 6px;
+        }
+        
+        .blog-body h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        
+        .blog-body p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+        
+        .blog-body .read-more {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        
+        .newsletter-box {
+            background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+            border-radius: var(--radius-2xl);
+            padding: 40px 36px;
+            text-align: center;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+        }
+        
+        .newsletter-box h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        
+        .newsletter-box p {
+            color: var(--gray-400);
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 480px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            min-width: 220px;
+            padding: 14px 18px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--white);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: var(--gray-500);
+        }
+        
+        .newsletter-form button {
+            padding: 14px 28px;
+            border-radius: 50px;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--gold-light);
+            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+        }
+        
+        /* ──────────── PAYMENT & PRICING SECTION ──────────── */
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        
+        .payment-method {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--navy);
+            transition: var(--transition);
+        }
+        
+        .payment-method i {
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+        
+        /* ──────────── CONTACT / LOCATION ──────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .contact-info-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 28px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .contact-info-card .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .contact-info-card .info-row i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .contact-info-card .info-row strong {
+            display: block;
+            color: var(--navy);
+            font-size: 0.9rem;
+        }
+        
+        .contact-info-card .info-row span {
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+        
+        .contact-form-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 28px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .contact-form-card h4 {
+            font-family: 'Merriweather', serif;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 14px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 4px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            background: var(--gray-50);
+            color: var(--gray-800);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.08);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        /* ──────────── FOOTER ──────────── */
+        .footer {
+            background: var(--navy);
+            color: var(--gray-400);
+            padding: 50px 28px 30px;
+            border-top: 3px solid var(--gold);
+        }
+        
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-col h4 {
+            color: var(--white);
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            margin-bottom: 14px;
+        }
+        
+        .footer-col a {
+            display: block;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+        
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+        
+        .footer-logo {
+            font-family: 'Merriweather', serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        
+        .footer-logo span {
+            color: var(--gold);
+        }
+        
+        /* ──────────── RESPONSIVE ──────────── */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-content p {
+                max-width: 100%;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-visual {
+                order: -1;
+            }
+            
+            .hero-card {
+                max-width: 100%;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .header-inner {
+                height: 64px;
+            }
+            
+            .mobile-menu {
+                top: 64px;
+            }
+            
+            html {
+                scroll-padding-top: 70px;
+            }
+            
+            .section {
+                padding: 50px 16px;
+            }
+            
+            .hero {
+                min-height: auto;
+                padding: 30px 0;
+            }
+            
+            .hero-inner {
+                padding: 30px 16px;
+                gap: 30px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-form input {
+                width: 100%;
+            }
+            
+            .logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.62rem;
+            }
+            
+            .logo-svg {
+                width: 38px;
+                height: 38px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+            }
+            
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-methods {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+        
+        /* ──────────── SCROLL TO TOP ──────────── */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+        }
+        
+        .scroll-top-btn.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        
+        .scroll-top-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+        }
+        
+        /* ──────────── ANIMATIONS ──────────── */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- ═══════════════ HEADER ═══════════════ -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#hero" class="logo-link" aria-label="DefendMe Netherlands Home">
+                <!-- Logo SVG -->
+                <svg class="logo-svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path class="logo-shield" d="M24 2L6 10v14c0 12.4 7.6 20 18 22 10.4-2 18-9.6 18-22V10L24 2zm0 6.5c3.8 0 6.9 3.1 6.9 6.9S27.8 22.3 24 22.3s-6.9-3.1-6.9-6.9 3.1-6.9 6.9-6.9z" fill="#c9a84c" />
+                    <text x="24" y="34" text-anchor="middle" fill="#c9a84c" font-size="8" font-weight="900" font-family="serif">DM</text>
+                </svg>
+                <div class="logo-text-group">
+                    <span class="logo-main">Defend<span>Me</span></span>
+                    <span class="logo-sub">Netherlands</span>
+                </div>
+            </a>
+            <nav class="nav" id="mainNav">
+                <a href="#about">About Us</a>
+                <a href="#team">Attorneys</a>
+                <a href="#consultations">Consultations</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#legal-cases">Legal Cases</a>
+                <a href="#faq">FAQ</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact" class="nav-cta">Free Consultation</a>
+            </nav>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#about">About Us</a>
+            <a href="#team">Attorneys</a>
+            <a href="#consultations">Consultations</a>
+            <a href="#pricing">Pay Now</a>
+            <a href="#legal-cases">Legal Cases</a>
+            <a href="#faq">FAQ</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact" class="nav-cta">Free Consultations</a>
+        </div>
+    </header>
+    
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-circle"></i> Trusted Across the Netherlands &amp; Globally</span>
+                <h1>World-Class <span>Legal Defense</span> When You Need It Most</h1>
+                <p>DefendMe Netherlands delivers strategic legal counsel, robust defense representation, and expert case filing services—protecting your rights across Dutch and international jurisdictions.</p>
+                <div class="hero-buttons">
+                    <a href="#consultations" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+                    <a href="#legal-cases" class="btn btn-outline"><i class="fas fa-gavel"></i> View Case Results</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="stat-row">
+                        <div class="stat">
+                            <div class="stat-num">500+</div>
+                            <div class="stat-label">Cases Won</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-num">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-num">25+</div>
+                            <div class="stat-label">Years Combined</div>
+                        </div>
+                    </div>
+                    <div class="trust-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="trust-text">Rated Excellent by clients across the Netherlands</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ═══════════════ ABOUT US ═══════════════ -->
+    <section class="section" id="about">
+        <div class="section-inner">
+            <span class="section-label">About Us</span>
+            <h2 class="section-title">Defending Rights. Delivering Justice. Since 2010.</h2>
+            <p class="section-subtitle">DefendMe Netherlands is a premier legal defense and consultancy firm headquartered in Amsterdam, serving clients across the Netherlands, the EU, and worldwide.</p>
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <div class="about-image-placeholder">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                </div>
+                <div>
+                    <p style="font-size:1rem;color:var(--gray-600);line-height:1.7;margin-bottom:16px;">
+                        Founded on the principle that everyone deserves access to top-tier legal representation, DefendMe Netherlands has grown into one of the most trusted defense firms in the region. Our multidisciplinary team combines deep expertise in Dutch civil law, international arbitration, corporate defense, and human rights advocacy.
+                    </p>
+                    <p style="font-size:1rem;color:var(--gray-600);line-height:1.7;margin-bottom:16px;">
+                        We pride ourselves on a relentless commitment to our clients—offering transparent communication, strategic foresight, and unwavering advocacy in every case we handle.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="about-highlight">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div><strong>Amsterdam HQ</strong><span>Hoogte Kadijk, 1018BH 1018</span></div>
+                        </div>
+                        <div class="about-highlight">
+                            <i class="fas fa-globe"></i>
+                            <div><strong>Global Reach</strong><span>EU &amp; International Jurisdictions</span></div>
+                        </div>
+                        <div class="about-highlight">
+                            <i class="fas fa-award"></i>
+                            <div><strong>Accredited</strong><span>Dutch Bar Association (NOvA)</span></div>
+                        </div>
+                        <div class="about-highlight">
+                            <i class="fas fa-clock"></i>
+                            <div><strong>24/7 Support</strong><span>Emergency legal hotline available</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ═══════════════ TEAM / ATTORNEYS ═══════════════ -->
+    <section class="section bg-light" id="team">
+        <div class="section-inner">
+            <span class="section-label">Our Team</span>
+            <h2 class="section-title">Meet Your Defense Attorneys</h2>
+            <p class="section-subtitle">A dedicated team of seasoned legal professionals committed to protecting your interests with integrity and excellence.</p>
+            <div class="team-grid">
+                <div class="team-card animate-on-scroll">
+                    <div class="team-avatar">
+                        <div class="team-avatar-inner">
+                            <img src="IMG_7816.jpeg" alt="zoran Miljakovic" width="100%" height="auto">
+                        </div>
+                    </div>
+                    <h4>Mr.Zoran Miljakovic</h4>
+                    <p class="role">Senior Defense Partner</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Amsterdam<br>Zoran Miljakovic is the managing partner of Miljakovic Law Firm. After completing his studies in Belgrade and graduating from the military academy he was the Chief Security Officer in Operation zone 4 as well as training instructor of the special police forces. He was the founder of a specialized agency that focused on security and private investigations before he took his place in the family practice.
+                        His area of expertise is corporate and criminal law with the focus on creating and setting up legal foundations for enterprises operating both locally and internationally, especially in Asia.<br>
+                        
+                        <b>Languages</b>: English, Serbian
+                    </p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-card animate-on-scroll">
+                    <div class="team-avatar">
+                        <div class="team-avatar-inner">
+                            <img src="IMG_7818.jpeg" alt="Andjela Okiljevic" width="100%" height="auto">
+                        </div>
+                    </div>
+                    <h4>Mrs.Andjela. Okiljevic</h4>
+                    <p class="role">Corporate &amp; Civil Litigation</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Rotterdam<br>Andjela Okiljević has been an associate/trainee at the Miljaković law firm since November 2023, where she specializes in the areas of corporate and contract law, as well as criminal law with a focus on cybercrime.
+                        Her area of interest also includes family law, inheritance law, and property-legal relations.
+                        She graduated in 2018 from the Faculty of Law of the University of Belgrade.<br>
+                        <b>Languages</b>: Serbian and English.
+                    </p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-card animate-on-scroll">
+                    <div class="team-avatar"><img src="IMG_7817.jpeg" alt="Aleksander Miljaković" width="100%" height="auto">
+                        <div class="team-avatar-inner">
+                        </div>
+                    </div>
+                    <h4>Mr Aleksander Miljakovic</h4>
+                    <p class="role">LLB MA & International Arbitration</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> The Hague<br>Aleksandar Miljakovic graduated law from City University London in 2012 and completed his MA at Webster University Vienna. After gaining considerable experience working in Vienna, Moscow, and Hong Kong he joined our law firm.His area of expertise is corporate and international law with the primary focus on contract analysis and negotiations.<br>
+                        <b>Languages</b>: English, German and Serbian
+                    </p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-card animate-on-scroll">
+                    <div class="team-avatar"><img src="IMG_7819.jpeg" alt="Pance Denic" width="100%" height="auto"></div>
+                    <h4>Mr. Pance Danic</h4>
+                    <p class="role">Associate/trainee & Human Rights &amp; Defense</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Utrecht<br>Pance Denic graduated from the Faculty of Law at the University of Belgrade. He has experience working with MLM and Ponzi websites and possesses IT skills, as well as knowledge of the BTC world. He is highly interested in the internet world and law.<br>
+                        <b>Languages</b>: Serbian and English.
+                    </p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ═══════════════ CONSULTATIONS ═══════════════ -->
+    <section class="section" id="consultations">
+        <div class="section-inner">
+            <span class="section-label">Consultations</span>
+            <h2 class="section-title">Expert Legal Consultations Tailored to You</h2>
+            <p class="section-subtitle">Whether you need urgent defense advice or long-term strategic planning, our consultation services are designed to provide clarity and direction from day one.</p>
+            <div class="pricing-grid" style="margin-bottom:40px;">
+                <div class="pricing-card">
+                    <h4>Initial Case Assessment</h4>
+                    <p style="color:var(--gray-500);font-size:0.88rem;">Perfect for understanding your legal position</p>
+                    <div class="price">€95<small></small></div>
+                    <div class="price-sub">30-minute session</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Case merit evaluation</li>
+                        <li><i class="fas fa-check-circle"></i> Preliminary legal guidance</li>
+                        <li><i class="fas fa-check-circle"></i> Written summary provided</li>
+                        <li><i class="fas fa-check-circle"></i> Next-step recommendations</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-block">Book Assessment</a>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <h4>Comprehensive Consultation</h4>
+                    <p style="color:var(--gray-500);font-size:0.88rem;">In-depth analysis and strategic planning</p>
+                    <div class="price">€295<small></small></div>
+                    <div class="price-sub">90-minute deep-dive session</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Full case documentation review</li>
+                        <li><i class="fas fa-check-circle"></i> Strategic defense planning</li>
+                        <li><i class="fas fa-check-circle"></i> Risk &amp; opportunity analysis</li>
+                        <li><i class="fas fa-check-circle"></i> Detailed written report</li>
+                        <li><i class="fas fa-check-circle"></i> Follow-up call included</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-block">Book Consultation</a>
+                </div>
+                <div class="pricing-card">
+                    <h4>Emergency Defense Consult</h4>
+                    <p style="color:var(--gray-500);font-size:0.88rem;">Urgent legal matters requiring immediate attention</p>
+                    <div class="price">€495<small></small></div>
+                    <div class="price-sub">Same-day / 24-hour response</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Priority attorney assignment</li>
+                        <li><i class="fas fa-check-circle"></i> Urgent case filing support</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 direct communication line</li>
+                        <li><i class="fas fa-check-circle"></i> Expedited documentation</li>
+                        <li><i class="fas fa-check-circle"></i> Court representation prep</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block" style="border-color:var(--gold);color:var(--navy);">Request Emergency Consult</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ═══════════════ PAYMENT & PRICING ═══════════════ -->
+    <section class="section bg-light" id="pricing">
+        <div class="section-inner">
+            <span class="section-label">Payment &amp; Pricing</span>
+            <h2 class="section-title">Transparent Pricing. No Hidden Costs.</h2>
+            <p class="section-subtitle">We believe in complete transparency. All fees are discussed upfront, and we offer flexible payment options to ensure quality legal defense is accessible.</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>Case Filing Package</h4>
+                    <p style="color:var(--gray-500);font-size:0.88rem;">Full-service case preparation &amp; filing</p>
+                    <div class="price">€1,200<small>+</small></div>
+                    <div class="price-sub">Depending on case complexity</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Complete documentation</li>
+                        <li><i class="fas fa-check-circle"></i> Court filing &amp; submission</li>
+                        <li><i class="fas fa-check-circle"></i> Evidence compilation</li>
+                        <li><i class="fas fa-check-circle"></i> Legal research &amp; citations</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Best Value</span>
+                    <h4>Full Defense Retainer</h4>
+                    <p style="color:var(--gray-500);font-size:0.88rem;">Ongoing representation &amp; full legal support</p>
+                    <div class="price">€3,500<small>/month</small></div>
+                    <div class="price-sub">Unlimited consultations included</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Dedicated attorney team</li>
+                        <li><i class="fas fa-check-circle"></i> Unlimited strategy sessions</li>
+                        <li><i class="fas fa-check-circle"></i> Court representation</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 priority hotline</li>
+                        <li><i class="fas fa-check-circle"></i> Document drafting &amp; review</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-block">Inquire Now</a>
+                </div>
+                <div class="pricing-card">
+                    <h4>Corporate Advisory</h4>
+                    <p style="color:var(--gray-500);font-size:0.88rem;">For businesses &amp; organizations</p>
+                    <div class="price">Custom</div>
+                    <div class="price-sub">Tailored to your organization</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Compliance &amp; risk management</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-jurisdiction support</li>
+                        <li><i class="fas fa-check-circle"></i> Employee legal training</li>
+                        <li><i class="fas fa-check-circle"></i> Ongoing regulatory guidance</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block" style="border-color:var(--gold);color:var(--navy);">Request Quote</a>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <div class="payment-method"><i class="fab fa-cc-mastercard"></i> Mastercard</div>
+                <div class="payment-method"><i class="fas fa-university"></i> Bitcoin Network</div>
+                <div class="payment-method"><i class="fab fa-paypal"></i> PayPal</div>
+            </div>
+            <p style="text-align:center;margin-top:16px;font-size:0.85rem;color:var(--gray-500);">
+                All payments are processed securely. VAT invoices provided for all services. Dutch Bar Association compliant billing.
+            </p>
+        </div>
+    </section>
+    
+    <!-- ═══════════════ LEGAL CASES ═══════════════ -->
+    <section class="section" id="legal-cases">
+        <div class="section-inner">
+            <span class="section-label">Legal Cases</span>
+            <h2 class="section-title">Proven Track Record of Success</h2>
+            <p class="section-subtitle">Explore a selection of our most impactful cases—each demonstrating our commitment to delivering favorable outcomes for our clients.</p>
+            <div class="cases-grid">
+                <div class="case-card animate-on-scroll">
+                    <div class="case-category">Corporate Defense</div>
+                    <h4>Multinational Compliance Dispute — Full Acquittal</h4>
+                    <p>Successfully defended a Netherlands-based corporation against regulatory allegations involving cross-border trade compliance. Achieved full dismissal of all charges.</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Amsterdam District Court</span>
+                    </div>
+                    <span class="case-outcome">✓ All Charges Dismissed</span>
+                </div>
+                <div class="case-card animate-on-scroll">
+                    <div class="case-category">Civil Rights</div>
+                    <h4>Privacy Violation Claim — Landmark Ruling</h4>
+                    <p>Represented an individual in a high-profile privacy violation case against a major tech company. Secured a landmark ruling that set new precedents in Dutch privacy law.</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-map-marker-alt"></i> The Hague</span>
+                    </div>
+                    <span class="case-outcome">✓ Favorable Ruling + Damages</span>
+                </div>
+                <div class="case-card animate-on-scroll">
+                    <div class="case-category">International Arbitration</div>
+                    <h4>Cross-Border Contract Dispute — €12M Settlement</h4>
+                    <p>Led arbitration proceedings for a Dutch exporter in a complex contract dispute spanning three jurisdictions. Secured a €12 million settlement in the client's favor.</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-map-marker-alt"></i> ICC Arbitration, Paris</span>
+                    </div>
+                    <span class="case-outcome">✓ €12M Settlement Won</span>
+                </div>
+                <div class="case-card animate-on-scroll">
+                    <div class="case-category">Criminal Defense</div>
+                    <h4>Fraud Allegation — Complete Exoneration</h4>
+                    <p>Defended a financial services professional against complex fraud charges. Through meticulous evidence analysis, achieved complete exoneration and restoration of professional standing.</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Rotterdam</span>
+                    </div>
+                    <span class="case-outcome">✓ Complete Exoneration</span>
+                </div>
+                <div class="case-card animate-on-scroll">
+                    <div class="case-category">Employment Law</div>
+                    <h4>Wrongful Termination — Reinstatement &amp; Compensation</h4>
+                    <p>Represented a senior executive in a wrongful termination claim against a Fortune 500 employer. Won reinstatement plus substantial compensation for damages.</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Utrecht</span>
+                    </div>
+                    <span class="case-outcome">✓ Reinstatement + Compensation</span>
+                </div>
+                <div class="case-card animate-on-scroll">
+                    <div class="case-category">Family &amp; Estate</div>
+                    <h4>Inheritance Dispute — Multi-Million Estate Resolution</h4>
+                    <p>Navigated a highly contentious inheritance dispute involving assets across the Netherlands and abroad. Achieved an amicable resolution preserving family relationships.</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Amsterdam</span>
+                    </div>
+                    <span class="case-outcome">✓ Amicable Resolution</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <section class="section bg-light" id="faq">
+        <div class="section-inner">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to common questions about our legal services, consultation process, and case handling.</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">How do I schedule a consultation? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Simply fill out the contact form at the bottom of this page or call our Amsterdam office directly. We'll match you with the most suitable attorney based on your legal needs and schedule a session at your convenience—in person, via video call, or by phone.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What types of cases does DefendMe Netherlands handle? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We handle a broad spectrum of legal matters including corporate defense, civil litigation, international arbitration, criminal defense, employment law, privacy and data protection cases, family and estate disputes, and regulatory compliance. If your case falls outside our core expertise, we'll refer you to a trusted partner firm.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are consultations confidential? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Absolutely. All consultations are protected by attorney-client privilege under Dutch law. Any information you share with us remains strictly confidential, regardless of whether you choose to retain our services afterward.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What payment methods do you accept? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We accept Mastercard, PayPal which takes 3-4 working days for approval of payments and the Bitcoin Network takes just 5-9 minutes to verify payments. All payments include VAT invoicing compliant with Dutch tax regulations.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can you represent clients outside the Netherlands? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes. Our firm handles cross-border and international cases regularly. We are experienced in EU-wide legal matters and collaborate with partner firms globally for cases extending beyond European jurisdiction. Remote consultations are available for international clients.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How long does a typical case take to resolve? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Case duration varies significantly based on complexity, jurisdiction, and the nature of the legal matter. Simple consultations may resolve issues immediately, while complex litigation can span several months to over a year. During your initial consultation, we'll provide a realistic timeline estimate.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What makes DefendMe Netherlands different from other law firms? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We combine deep Dutch legal expertise with a global perspective. Our transparent pricing, 24/7 availability for urgent matters, and personalized attorney-client matching set us apart. We treat every case with the gravity it deserves—no matter the size or complexity.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ═══════════════ BLOG / NEWSLETTER ═══════════════ -->
+    <section class="section" id="blog">
+        <div class="section-inner">
+            <span class="section-label">Blog &amp; Insights</span>
+            <h2 class="section-title">Legal Insights &amp; Updates</h2>
+            <p class="section-subtitle">Stay informed with our latest articles, legal analyses, and firm updates.</p>
+            <div class="blog-grid">
+                <div class="blog-card animate-on-scroll">
+                    <div class="blog-thumb"><i class="fas fa-newspaper"></i></div>
+                    <div class="blog-body">
+                        <div class="blog-date">May 15, 2026</div>
+                        <h4>Understanding Dutch Privacy Law: Key Changes for 2026</h4>
+                        <p>An overview of the latest amendments to Dutch privacy regulations and what they mean for businesses operating in the Netherlands.</p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                <div class="blog-card animate-on-scroll">
+                    <div class="blog-thumb"><i class="fas fa-globe"></i></div>
+                    <div class="blog-body">
+                        <div class="blog-date">April 28, 2026</div>
+                        <h4>Cross-Border Disputes: Navigating Multi-Jurisdiction Cases</h4>
+                        <p>Practical strategies for managing legal disputes that span multiple countries, from evidence gathering to enforcement of judgments.</p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                <div class="blog-card animate-on-scroll">
+                    <div class="blog-thumb"><i class="fas fa-shield-alt"></i></div>
+                    <div class="blog-body">
+                        <div class="blog-date">March 10, 2026</div>
+                        <h4>When to Hire a Defense Attorney: Early Intervention Matters</h4>
+                        <p>Why engaging legal counsel at the earliest sign of a dispute can dramatically improve your chances of a favorable outcome.</p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="newsletter-box">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get the latest legal insights, firm updates, and exclusive content delivered straight to your inbox. No spam—just valuable information.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Your email address" required aria-label="Email for newsletter">
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe Free</button>
+                </form>
+                <p style="font-size:0.75rem;color:var(--gray-500);margin-top:10px;">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ═══════════════ CONTACT / LOCATION ═══════════════ -->
+    <section class="section bg-light" id="contact">
+        <div class="section-inner">
+            <span class="section-label">Contact &amp; Location</span>
+            <h2 class="section-title">Get In Touch With Us</h2>
+            <p class="section-subtitle">Our Amsterdam office is ready to assist you. Reach out for a free initial inquiry or to schedule your consultation.</p>
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <h4 style="font-family:'Merriweather',serif;color:var(--navy);margin-bottom:16px;">Our Office</h4>
+                    <div class="info-row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>DefendMe Netherlands</strong>
+                            <span>Herengracht 420<br>1017 BZ Amsterdam<br>Netherlands</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            <span>+31 (0)20 123 45 67</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <span>info@defendme.nl</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Office Hours</strong>
+                            <span>Mon–Fri: 08:00–18:00 CET<br>Emergency Line: 24/7</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <i class="fas fa-gavel"></i>
+                        <div>
+                            <strong>Dutch Bar Association</strong>
+                            <span>Registered NOvA Member</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-card">
+                    <h4>Send Us a Message</h4>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+31 (0)6...">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="consultation">Initial Consultation</option>
+                                <option value="defense">Legal Defense</option>
+                                <option value="filing">Case Filing</option>
+                                <option value="corporate">Corporate Advisory</option>
+                                <option value="emergency">Emergency Assistance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required placeholder="Briefly describe your legal matter..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div class="footer-logo">Defend<span>Me</span> Netherlands</div>
+                <p style="font-size:0.82rem;color:var(--gray-500);">Global Legal Defense &amp; Consultancy</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#about">About Us</a>
+                <a href="#team">Attorneys</a>
+                <a href="#consultations">Consultations</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="#legal-cases">Legal Cases</a>
+                <a href="#faq">FAQ</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="#"><i class="fab fa-whatsapp"></i> Whatsapp / X</a>
+                <a href="https://"><i class="fas fa-envelope"></i> Email Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DefendMe Netherlands. All rights reserved. | Registered with the Dutch Bar Association (NOvA) | Herengracht 420, 1017 BZ Amsterdam, Netherlands</p>
+            <p style="margin-top:4px;"><a href="#" style="color:var(--gray-500);">Privacy Policy</a> | <a href="#" style="color:var(--gray-500);">Terms of Service</a> | <a href="#" style="color:var(--gray-500);">Cookie Policy</a></p>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        // ──────────── MOBILE MENU TOGGLE ────────────
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = hamburgerBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const icon = hamburgerBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+        
+        // ──────────── HEADER SCROLL SHADOW ────────────
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // ──────────── SCROLL TO TOP BUTTON ────────────
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // ──────────── FAQ ACCORDION ────────────
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const questionBtn = item.querySelector('.faq-question');
+            questionBtn.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                // Close all
+                faqItems.forEach(i => i.classList.remove('active'));
+                // Open clicked (unless it was already open)
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // ──────────── SCROLL ANIMATION ────────────
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px',
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        animatedElements.forEach(el => observer.observe(el));
+        
+        // ──────────── ACTIVE NAV LINK HIGHLIGHT ────────────
+        const navLinks = document.querySelectorAll('#mainNav a:not(.nav-cta)');
+        const sections = [];
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const section = document.querySelector(href);
+                if (section) sections.push({ link, section });
+            }
+        });
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(({ link, section }) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 120) {
+                    current = link.getAttribute('href');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // ──────────── FORM SUBMISSIONS (Demo) ────────────
+        const contactForm = document.getElementById('contactForm');
+        const newsletterForm = document.getElementById('newsletterForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(
+                `Thank you, ${name}! Your message has been received. A member of our team will contact you within 24 hours.`);
+            contactForm.reset();
+        });
+        
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            alert(
+                `Thank you for subscribing with ${emailInput.value}! You'll receive our next newsletter and legal insights soon.`);
+            newsletterForm.reset();
+        });
+        
+        // ──────────── INITIAL SCROLL CHECK ────────────
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
